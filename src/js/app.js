@@ -1,32 +1,22 @@
-// const data = '{"data":{"user":{"id":1,"name":"Hitman","level":10}}}';
-/*
-Все методы класса сделал статическими потомучто линтер говорит:
-"если не используется this в методе следует делать метод статическим"
-*/
-// eslint-disable-next-line no-unused-vars
-export default class ArrayBufferConverter {
-  static getBuffer(input) {
-    const buffer = new ArrayBuffer(input.length * 2);
-    const bufferView = new Uint16Array(buffer);
-    for (let i = 0; i < input.length; i++) {
-      bufferView[i] = input.charCodeAt(i);
-    }
-    return buffer;
-  }
+/* eslint-disable no-unused-vars */
 
-  static set load(buffer) {
-    ArrayBufferConverter.buffer = buffer;
-  }
+import Bowman from "./classes/Characters/Bowman";
+import Character from "./classes/Characters/ParentClasses/Character";
+import Daemon from "./classes/Characters/Daemon";
+import Magician from "./classes/Characters/Magician";
+import Phonecontrol from "./classes/Phonecontrol";
+import Settings from "./classes/Settings";
+import Swordsman from "./classes/Characters/Swordsman";
+import Team from "./classes/Team";
+import Undead from "./classes/Characters/Undead";
+import Validator from "./classes/Validator";
+import Zombie from "./classes/Characters/Zombie";
 
-  static get load() {
-    return ArrayBufferConverter.buffer;
-  }
+const someMag = new Magician("Pendalf");
+someMag.attackOnDistance = 5;
+console.log(someMag.attackOnDistance);
 
-  static toString(buffer) {
-    return String.fromCharCode.apply(null, new Uint16Array(buffer));
-  }
-}
-
-const abData = ArrayBufferConverter.getBuffer('Dima');
-console.log(abData);
-ArrayBufferConverter.load = abData;
+const someBowman = new Bowman("dima");
+console.log((someBowman.attackOnDistance = 5));
+console.log(someBowman.attackOnDistance);
+console.log(someBowman);
