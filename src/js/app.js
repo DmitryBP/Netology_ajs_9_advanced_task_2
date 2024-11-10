@@ -11,12 +11,5 @@ import Team from "./classes/Team";
 import Undead from "./classes/Characters/Undead";
 import Validator from "./classes/Validator";
 import Zombie from "./classes/Characters/Zombie";
+import ArrayBufferConverter from "./classes/ArrayBufferConverter";
 
-const someMag = new Magician("Pendalf");
-someMag.attackOnDistance = 5;
-console.log(someMag.attackOnDistance);
-
-const someBowman = new Bowman("dima");
-console.log((someBowman.attackOnDistance = 5));
-console.log(someBowman.attackOnDistance);
-console.log(someBowman);
